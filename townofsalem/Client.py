@@ -32,3 +32,15 @@ class Client():
         Functions.change_preferences(self._socket, character, house, map, pet, lobby_icon, death_animation, 
         equipped_scroll_1, equipped_scroll_2, equipped_scroll_3, preferred_name)
 
+    def join_queue(self):
+        return Functions.join_queue(self._socket)
+
+    def leave_queue(self):
+        return Functions.leave_queue(self._socket)
+
+    def buy_item(self, currency, item_id, quantity):
+        Functions.buy_item(self._socket, currency, item_id, quantity)
+
+    def stir_daily_brew(self):
+        # Implemented as buying an item
+        Functions.buy_item(self._socket, Currency.TOWN_POINTS, Special.DAILY_BREW, 1)

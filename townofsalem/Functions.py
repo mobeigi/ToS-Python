@@ -55,7 +55,7 @@ class Functions():
         socket.send(packet)
         data = socket.recv(0) # Receive ACK
         
-        packet = b'\x4a' + bytes(currency.value, 'UTF-8') + bytes(item_id, 'UTF-8') + COMMA + bytes(str(quantity), 'UTF-8') + NULL
+        packet = b'\x4a' + bytes(str(currency.value), 'UTF-8') + bytes(item_id, 'UTF-8') + COMMA + bytes(str(quantity), 'UTF-8') + NULL
         socket.send(packet)
         
         data = socket.recv(1024) # TODO

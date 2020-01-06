@@ -20,3 +20,6 @@ class DeathAnimation():
 
 class Scroll():
     TEST = b'\x32\x33'
+
+class Special():
+    DAILY_BREW = '2600200'
