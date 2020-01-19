@@ -1,4 +1,4 @@
-from .constants import *
+from .constants import NULL
 from .models.client.login_type import LoginType
 from .models.client.platform import Platform
 from .models.client.message_type import MessageType
@@ -78,7 +78,7 @@ class Authentication():
         iv = b64encode(iv)
         payload = b64encode(payload)
 
-        packet = bytes([MessageType.Login]) + bytes(json.dumps({'key':encrypted_key.decode('UTF-8'),'iv':iv.decode('UTF-8'),'payload':payload.decode('UTF-8')}), 'UTF-8') + b'\x00'
+        packet = bytes([MessageType.Login]) + bytes(json.dumps({'key':encrypted_key.decode('UTF-8'),'iv':iv.decode('UTF-8'),'payload':payload.decode('UTF-8')}), 'UTF-8') + NULL
         
         # Send Packet
         socket.send(packet)
@@ -100,5 +100,5 @@ class Authentication():
     def logout(self, socket):
         # Send FIN bit
         socket.shutdown(1)
-        data = socket.recv(0) # Empty packet FIN ACK
+        socket.recv(0) # Empty packet FIN ACK
         return True

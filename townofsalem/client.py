@@ -1,6 +1,7 @@
-from .constants import *
-from .authentication import *
-from .functions import *
+from .items import Special
+from .authentication import Authentication
+from .functions import Functions
+from .models.currency_type import CurrencyType
 
 import socket
 
@@ -43,4 +44,4 @@ class Client():
 
     def stir_daily_brew(self):
         # Implemented as buying an item
-        Functions.buy_item(self._socket, Currency.TOWN_POINTS, Special.DAILY_BREW, 1)
+        Functions.buy_item(self._socket, CurrencyType.TownPoints, Special.DAILY_BREW, 1)

@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from townofsalem.__meta__ import *
+from townofsalem.__meta__ import __title__, __version__, __description__, __license__, __author__, __email__, __website__
 
 setup(
     name=__title__,

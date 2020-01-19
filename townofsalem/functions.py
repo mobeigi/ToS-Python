@@ -1,7 +1,7 @@
-from .constants import *
+from .constants import COMMA, NULL
 
 class Functions():
-
+    
     # Change preferrences that are stored server side
     @staticmethod
     def change_preferences(socket, character, house, map, pet, lobby_icon, death_animation, 
@@ -20,14 +20,14 @@ class Functions():
             NULL
         
         socket.send(packet)
-        data = socket.recv(0) # Empty packet ACK
+        socket.recv(0) # Empty packet ACK
         return True
 
     @staticmethod
     def join_queue(socket):
         packet = b'\x7f' + NULL
         socket.send(packet)
-        data = socket.recv(0) # Receive ACK
+        socket.recv(0) # Receive ACK
         
         packet = b'\x3c\x06\x00'
         socket.send(packet)
@@ -53,9 +53,9 @@ class Functions():
         # Sent before buy item packet
         packet = b'\x7f' + NULL
         socket.send(packet)
-        data = socket.recv(0) # Receive ACK
+        socket.recv(0) # Receive ACK
         
         packet = b'\x4a' + bytes(str(currency.value), 'UTF-8') + bytes(item_id, 'UTF-8') + COMMA + bytes(str(quantity), 'UTF-8') + NULL
         socket.send(packet)
         
-        data = socket.recv(1024) # TODO
+        socket.recv(1024) # TODO Use return data
