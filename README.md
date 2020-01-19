@@ -11,7 +11,7 @@
 <a href="../../releases"><img src="https://img.shields.io/github/release/mobeigi/ToS-Python.svg?style=flat-square" /></a>
 <a href="../../issues"><img src="https://img.shields.io/github/issues/mobeigi/ToS-Python.svg?style=flat-square" /></a>
 <a href="../../pulls"><img src="https://img.shields.io/github/issues-pr/mobeigi/ToS-Python.svg?style=flat-square" /></a> 
-<a href="LICENSE.md"><img src="https://img.shields.io/github/license/mobeigi/ToS-Python.svg?style=flat-square" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/mobeigi/ToS-Python.svg?style=flat-square" /></a>
 </p>
 
 ## Description
