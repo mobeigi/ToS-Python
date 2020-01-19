@@ -1,6 +1,6 @@
-from .Constants import *
-from .Authentication import *
-from .Functions import *
+from .constants import *
+from .authentication import *
+from .functions import *
 
 import socket
 
@@ -19,10 +19,10 @@ class Client():
             self._socket = socket.socket()
             self._socket.connect((self.auth.host, self.auth.port))
 
-    def login(self, username : str, password: str):
+    def login(self, username : str, password: str, steamid: str = None):
         # Init socket
         self._init_socket()
-        return self.auth.login(self._socket, username, password)
+        return self.auth.login(self._socket, username, password, steamid)
 
     def logout(self):
         return self.auth.logout(self._socket)

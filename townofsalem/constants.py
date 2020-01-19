@@ -1,4 +1,4 @@
-from .Items import *
+from .items import *
 
 RS = b'\x1E' # Record Seperator ASCII Code 30
 NULL = b'\x00'

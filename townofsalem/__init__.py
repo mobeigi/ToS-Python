@@ -1,4 +1,4 @@
-from .Client import Client
-from .Authentication import Authentication, LoginResponse
-from .Functions import Functions
-from .Items import *
+from .client import Client
+from .authentication import Authentication
+from .functions import Functions
+from .items import *
