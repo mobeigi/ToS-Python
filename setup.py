@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
+from townofsalem.__meta__ import *
 
 setup(
-    name='TownOfSalem',
-    version='1.0.0',
-    description='Town of Salem Python Library for interacting with the game',
+    name=__title__,
+    version=__version__,
+    description=__description__,
     packages=find_packages(),
-    license='GNU General Public License v3.0',
-    author='Mo Beigi',
-    author_email='me@mobeigi.com',
-    url='https://github.com/mobeigi/tos-python'
+    license=__license__,
+    author=__author__,
+    author_email=__email__,
+    url=__website__
 )
